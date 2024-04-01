@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="header">
+        <img class="logo" src="{% static 'logo.png' %}" alt="Logo">
+    </div>
+    <nav>
+        <a href="{% url 'home_view' %}">Home</a>
+        <a href="{% url 'character_view' %}">Characters</a>
+    </nav>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

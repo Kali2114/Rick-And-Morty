@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Rick and Morty Characters{% endblock %}
+
+{% block content %}
+    <h1>Characters</h1>
+    <ul class="character-list">
+        {% for character in characters %}
+            <li class="character-item">
+                <h2>{{ character.name }}</h2>
+                <p>Status: {{ character.status }}</p>
+                <p>Species: {{ character.species }}</p>
+                <p>Gender: {{ character.gender }}</p>
+                <img src="{{ character.image }}" alt="{{ character.name }}">
+            </li>
+        {% empty %}
+            <li>No characters found.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
